@@ -1,8 +1,131 @@
-gg
-f
-f
-f
-f
-f
-f
-f
+1) 5 days before current data:
+
+
+from datetime import date, timedelta
+
+dt = date.today() - timedelta(5)
+
+print('5 days before Current Date :',dt)
+2) yesterday today tommorow:
+from datetime import date, timedelta
+
+dt = date.today() - timedelta(1)
+
+print('yesterday :',dt)
+print('today :' ,date.today())
+dt = date.today() + timedelta(1)
+print('tommorow :' , dt)
+
+
+
+
+3) replace microseconds:
+import datetime
+dt = datetime.datetime.today().replace(microsecond=0)
+print(dt)
+
+
+
+4)from datetime import datetime, time
+def sec(dt2, dt1):
+  diff = dt2 - dt1
+  return diff.days * 24 * 3600 + diff.seconds
+dd = input()
+date1 = datetime.strptime(dd, '%Y-%m-%d %H:%M:%S')
+dd2 = input()
+date2 = datetime.strptime(dd2, '%Y-%m-%d %H:%M:%S')
+print("\n%d seconds" %(sec(date2, date1)))
+
+
+
+5) generator of squares:
+def generator(n):
+    for i in range(n):
+        yield (i+1)**2
+
+n = int(input())
+gg = generator(n)
+for element in gg:
+    print(element)
+    
+    
+6)even numbers
+def even(n):
+    i = 1;
+    while i < n:
+        if i%2 == 0:
+            yield i
+        i = i + 1
+
+n = int(input())
+for element in even(n):
+    print("'", element, "'", end = " ")
+    
+
+
+7)divisible by 4 and 3
+def number(n):
+    i = 1;
+    while i < n:
+        if i%3 == 0 and i%4 == 0:
+            yield i
+        i = i + 1
+
+n = int(input())
+for element in number(n):
+    print(element, end = " ")
+
+
+
+8)
+def square(n, m):
+    for i in range(n, m+1):
+        yield i**2
+
+n = int(input())
+m = int(input())
+gg = square(n, m)
+for element in gg:
+    print(element)
+
+
+
+9)
+def dec(n):
+    i = 0
+    while i <= n:
+        yield n
+        n = n-1
+
+n = int(input())
+for element in dec(n):
+    print(element)
+
+
+10)
+n = float(input())
+
+b = n * 22/7/180
+print(b)
+
+
+11)
+a = int(input())
+b = int(input())
+h = int(input())
+area = (a+b)/2*h
+print(area)
+
+12)
+from math import tan, pi
+a = int(input())
+n = int(input())
+area = (n * a**2)/(4* tan(pi/n))
+print(round(area))
+
+
+13)
+a = int(input())
+h = int(input())
+area = a*h
+print(area)
